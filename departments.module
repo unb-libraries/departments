@@ -68,6 +68,7 @@ function _department_list_json() {
         'last_name' => $dept_head_user->field_last_name['und']['0']['safe_value'],
         'position' => $dept_head_user->field_position_title['und']['0']['safe_value'],
         'phone' => $dept_head_user->field_phone_number['und']['0']['safe_value'],
+        'on_leave' => $member_user->field_on_leave['und']['0']['value'],
         'email' => $dept_head_user->mail,
         'head' => TRUE,
       );
