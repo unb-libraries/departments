@@ -53,8 +53,26 @@ function _department_list_json() {
       'website' => $department_term->field_department_website['und'][0]['safe_value'],
       'html_id' => $department_term->field_short_name['und'][0]['safe_value'],
       'members' => array(),
-      'department_heads' => array(),
     );
+
+    $dept_head_query = new EntityFieldQuery();
+    $dept_head_query->entityCondition('entity_type', 'user')
+    ->fieldCondition('field_library_department_head', 'tid', $department->tid, '=')
+    ->fieldOrderBy('field_last_name', 'value', 'ASC');
+    $dept_head_result = $dept_head_query->execute();
+
+    foreach ($dept_head_result['user'] as $uid => $dept_head) {
+      $dept_head_user = user_load($uid);
+      $dept_head_info = array(
+        'first_name' => $dept_head_user->field_first_name['und']['0']['safe_value'],
+        'last_name' => $dept_head_user->field_last_name['und']['0']['safe_value'],
+        'position' => $dept_head_user->field_position_title['und']['0']['safe_value'],
+        'phone' => $dept_head_user->field_phone_number['und']['0']['safe_value'],
+        'email' => $dept_head_user->mail,
+        'head' => TRUE,
+      );
+      $department_info['members'][] = $dept_head_info;
+    }
 
     $member_query = new EntityFieldQuery();
     $member_query->entityCondition('entity_type', 'user')
@@ -62,7 +80,6 @@ function _department_list_json() {
     ->fieldOrderBy('field_last_name', 'value', 'ASC');
     $member_result = $member_query->execute();
 
-    $members = array();
     foreach ($member_result['user'] as $uid => $member) {
       $member_user = user_load($uid);
       $member_info = array(
@@ -72,34 +89,10 @@ function _department_list_json() {
         'phone' => $member_user->field_phone_number['und']['0']['safe_value'],
         'on_leave' => $member_user->field_on_leave['und']['0']['value'],
         'email' => $member_user->mail,
+        'head' => FALSE,
       );
-
-      $members[] = $member_info;
+      $department_info['members'][] = $member_info;
     }
-
-    $department_info['members'] = $members;
-
-    $dept_head_query = new EntityFieldQuery();
-    $dept_head_query->entityCondition('entity_type', 'user')
-    ->fieldCondition('field_library_department_head', 'tid', $department->tid, '=')
-    ->fieldOrderBy('field_last_name', 'value', 'ASC');
-    $dept_head_result = $dept_head_query->execute();
-
-    $dept_heads = array();
-    foreach ($dept_head_result['user'] as $uid => $dept_head) {
-      $dept_head_user = user_load($uid);
-      $dept_head_info = array(
-        'first_name' => $dept_head_user->field_first_name['und']['0']['safe_value'],
-        'last_name' => $dept_head_user->field_last_name['und']['0']['safe_value'],
-        'position' => $dept_head_user->field_position_title['und']['0']['safe_value'],
-        'phone' => $dept_head_user->field_phone_number['und']['0']['safe_value'],
-        'email' => $dept_head_user->mail,
-      );
-
-      $dept_heads[] = $dept_head_info;
-    }
-
-    $department_info['department_heads'] = $dept_heads;
 
     $departments[] = $department_info;
   }
