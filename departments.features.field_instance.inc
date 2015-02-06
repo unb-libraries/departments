@@ -180,6 +180,40 @@ function departments_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'taxonomy_term-library_departments-field_short_name'
+  $field_instances['taxonomy_term-library_departments-field_short_name'] = array(
+    'bundle' => 'library_departments',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Used for the html ID in the rendered output',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 5,
+      ),
+    ),
+    'entity_type' => 'taxonomy_term',
+    'field_name' => 'field_short_name',
+    'label' => 'Short name',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 36,
+    ),
+  );
+
   // Exported field_instance: 'user-user-field_first_name'
   $field_instances['user-user-field_first_name'] = array(
     'bundle' => 'user',
@@ -436,6 +470,8 @@ function departments_field_default_field_instances() {
   t('Position Title');
   t('Select the departments this member is a regular member of.');
   t('Select the departments this user is the head of.');
+  t('Short name');
+  t('Used for the html ID in the rendered output');
   t('Website');
 
   return $field_instances;
