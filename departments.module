@@ -51,7 +51,7 @@ function _department_list_json() {
       'fax' => $department_term->field_department_fax['und'][0]['safe_value'],
       'email' => $department_term->field_department_email['und'][0]['safe_value'],
       'website' => $department_term->field_department_website['und'][0]['safe_value'],
-      'html_id' => $department_term->field_department_short_name['und'][0]['safe_value'],
+      'html_id' => $department_term->field_short_name['und'][0]['safe_value'],
       'members' => array(),
       'department_heads' => array(),
     );
