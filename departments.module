@@ -69,7 +69,7 @@ function _department_list_json() {
         'position' => $dept_head_user->field_position_title['und']['0']['safe_value'],
         'phone' => $dept_head_user->field_phone_number['und']['0']['safe_value'],
         'on_leave' => $member_user->field_on_leave['und']['0']['value'],
-        'email' => $dept_head_user->mail,
+        'email_id' => explode("@", $dept_head_user->mail)[0],
         'head' => TRUE,
       );
       $department_info['members'][] = $dept_head_info;
@@ -89,7 +89,7 @@ function _department_list_json() {
         'position' => $member_user->field_position_title['und']['0']['safe_value'],
         'phone' => $member_user->field_phone_number['und']['0']['safe_value'],
         'on_leave' => $member_user->field_on_leave['und']['0']['value'],
-        'email' => $member_user->mail,
+        'email_id' => explode("@", $member_user->mail)[0],
         'head' => FALSE,
       );
       $department_info['members'][] = $member_info;
