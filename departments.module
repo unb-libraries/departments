@@ -15,6 +15,7 @@ function departments_menu() {
     'title' => 'Departments',
     'page callback' => '_department_list_json',
     'access arguments' => array('view departments'),
+    'type' => MENU_CALLBACK,
   );
   return $items;
 }
