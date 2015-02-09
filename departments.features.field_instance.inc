@@ -214,6 +214,43 @@ function departments_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'user-user-field_display_on_staff_directory'
+  $field_instances['user-user-field_display_on_staff_directory'] = array(
+    'bundle' => 'user',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 14,
+      ),
+    ),
+    'entity_type' => 'user',
+    'field_name' => 'field_display_on_staff_directory',
+    'label' => 'Display on Staff Directory',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => 1,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 1,
+      ),
+      'type' => 'options_onoff',
+      'weight' => 9,
+    ),
+  );
+
   // Exported field_instance: 'user-user-field_first_name'
   $field_instances['user-user-field_first_name'] = array(
     'bundle' => 'user',
@@ -306,12 +343,12 @@ function departments_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 0,
-      'module' => 'options',
+      'module' => 'taxonomy',
       'settings' => array(
         'autocomplete_path' => 'taxonomy/autocomplete',
         'size' => 60,
       ),
-      'type' => 'options_buttons',
+      'type' => 'taxonomy_autocomplete',
       'weight' => 7,
     ),
   );
@@ -340,12 +377,12 @@ function departments_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 0,
-      'module' => 'options',
+      'module' => 'taxonomy',
       'settings' => array(
         'autocomplete_path' => 'taxonomy/autocomplete',
         'size' => 60,
       ),
-      'type' => 'options_buttons',
+      'type' => 'taxonomy_autocomplete',
       'weight' => 8,
     ),
   );
@@ -383,7 +420,7 @@ function departments_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 9,
+      'weight' => 10,
     ),
   );
 
@@ -457,6 +494,7 @@ function departments_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Display on Staff Directory');
   t('Email');
   t('Fax');
   t('First Name');

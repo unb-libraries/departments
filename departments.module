@@ -57,7 +57,9 @@ function _department_list_json() {
 
     $dept_head_query = new EntityFieldQuery();
     $dept_head_query->entityCondition('entity_type', 'user')
+    ->propertyCondition('status', 1) //active users only
     ->fieldCondition('field_library_department_head', 'tid', $department->tid, '=')
+    ->fieldCondition('field_display_on_staff_directory', 'value', 1, '=')
     ->fieldOrderBy('field_last_name', 'value', 'ASC');
     $dept_head_result = $dept_head_query->execute();
 
@@ -77,7 +79,9 @@ function _department_list_json() {
 
     $member_query = new EntityFieldQuery();
     $member_query->entityCondition('entity_type', 'user')
+    ->propertyCondition('status', 1) //active users only
     ->fieldCondition('field_library_department', 'tid', $department->tid, '=')
+    ->fieldCondition('field_display_on_staff_directory', 'value', 1, '=')
     ->fieldOrderBy('field_last_name', 'value', 'ASC');
     $member_result = $member_query->execute();
 
