@@ -10,10 +10,15 @@
 function departments_menu() {
 
   $items = array();
-  // Staff view of items for adminstration purposes.
   $items['departments.xml'] = array(
     'title' => 'Departments',
     'page callback' => '_department_list_json',
+    'access arguments' => array('view departments'),
+    'type' => MENU_CALLBACK,
+  );
+  $items['staff.xml'] = array(
+    'title' => 'Staff',
+    'page callback' => '_staff_list_alpha_json',
     'access arguments' => array('view departments'),
     'type' => MENU_CALLBACK,
   );
@@ -29,6 +34,37 @@ function departments_permission() {
       'title' => t('View Departments JSON'),
     ),
   );
+}
+
+/**
+ * Creates alphabetical list of staff in JSON format
+ */
+function _staff_list_alpha_json() {
+  $staff_query = new EntityFieldQuery();
+  $staff_query->entityCondition('entity_type', 'user')
+  ->propertyCondition('status', 1) //active users only
+  ->fieldCondition('field_display_on_staff_directory', 'value', 1, '=')
+  ->fieldOrderBy('field_last_name', 'value', 'ASC');
+  $staff_result = $staff_query->execute();
+
+  $staff_list = array();
+  foreach ($staff_result['user'] as $uid => $staff) {
+    $staff_user = user_load($uid);
+    $staff_info = array(
+      'first_name' => $staff_user->field_first_name['und']['0']['safe_value'],
+      'last_name' => $staff_user->field_last_name['und']['0']['safe_value'],
+      'position' => $staff_user->field_position_title['und']['0']['safe_value'],
+      'phone' => $staff_user->field_phone_number['und']['0']['safe_value'],
+      'on_leave' => $staff_user->field_on_leave['und']['0']['value'],
+      'email_id' => explode("@", $staff_user->mail)[0],
+      'head' => FALSE,
+    );
+    $staff_list[] = $staff_info;
+  }
+
+  print json_encode($staff_list);
+
+  return;
 }
 
 /**
