@@ -170,10 +170,12 @@ function _library_liasons_list_json() {
     foreach ($faculties_result['taxonomy_term'] as $faculty) {
       $faculty_term = taxonomy_term_load($faculty->tid);
       $faculty_info = array(
-        'name' => $faculty_term->name,
-        'department_rep_name' => $faculty_term->field_department_rep_name['und'][0]['safe_value'],
-        'department_rep_phone' => $faculty_term->field_department_rep_phone['und'][0]['safe_value'],
-        'department_rep_email' => $faculty_term->field_department_rep_email['und'][0]['safe_value'],
+        'name' => $faculty_term->field_display_name['und'][0]['safe_value'],
+        'department_rep' => array(
+          'name' => $faculty_term->field_department_rep_name['und'][0]['safe_value'],
+          'phone' => $faculty_term->field_department_rep_phone['und'][0]['safe_value'],
+          'email' => $faculty_term->field_department_rep_email['und'][0]['safe_value'],
+        ),
         'library_liason' => array(),
       );
 

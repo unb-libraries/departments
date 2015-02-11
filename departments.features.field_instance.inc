@@ -143,6 +143,40 @@ function departments_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'taxonomy_term-faculties-field_display_name'
+  $field_instances['taxonomy_term-faculties-field_display_name'] = array(
+    'bundle' => 'faculties',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 5,
+      ),
+    ),
+    'entity_type' => 'taxonomy_term',
+    'field_name' => 'field_display_name',
+    'label' => 'Display Name',
+    'required' => 1,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 31,
+    ),
+  );
+
   // Exported field_instance: 'taxonomy_term-library_departments-field_department_email'
   $field_instances['taxonomy_term-library_departments-field_department_email'] = array(
     'bundle' => 'library_departments',
@@ -665,6 +699,7 @@ function departments_field_default_field_instances() {
   t('Department Rep Email ID');
   t('Department Rep Name');
   t('Department Rep Phone');
+  t('Display Name');
   t('Display on Staff Directory');
   t('Email');
   t('Fax');
