@@ -520,6 +520,40 @@ function departments_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'user-user-field_library_liason'
+  $field_instances['user-user-field_library_liason'] = array(
+    'bundle' => 'user',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 16,
+      ),
+    ),
+    'entity_type' => 'user',
+    'field_name' => 'field_library_liason',
+    'label' => 'Library Liason',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => 1,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'taxonomy',
+      'settings' => array(
+        'autocomplete_path' => 'taxonomy/autocomplete',
+        'size' => 60,
+      ),
+      'type' => 'taxonomy_autocomplete',
+      'weight' => 10,
+    ),
+  );
+
   // Exported field_instance: 'user-user-field_on_leave'
   $field_instances['user-user-field_on_leave'] = array(
     'bundle' => 'user',
@@ -553,7 +587,7 @@ function departments_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 10,
+      'weight' => 12,
     ),
   );
 
@@ -638,6 +672,7 @@ function departments_field_default_field_instances() {
   t('Last Name');
   t('Library Department (Department Head)');
   t('Library Department (Regular Member)');
+  t('Library Liason');
   t('Location');
   t('On Leave');
   t('Phone');
