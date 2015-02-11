@@ -22,6 +22,12 @@ function departments_menu() {
     'access arguments' => array('view departments'),
     'type' => MENU_CALLBACK,
   );
+  $items['liasons.xml'] = array(
+    'title' => 'Library Liasons',
+    'page callback' => '_library_liasons_list_json',
+    'access arguments' => array('view departments'),
+    'type' => MENU_CALLBACK,
+  );
   return $items;
 }
 
@@ -106,7 +112,7 @@ function _department_list_json() {
         'last_name' => $dept_head_user->field_last_name['und']['0']['safe_value'],
         'position' => $dept_head_user->field_position_title['und']['0']['safe_value'],
         'phone' => $dept_head_user->field_phone_number['und']['0']['safe_value'],
-        'on_leave' => $member_user->field_on_leave['und']['0']['value'],
+        'on_leave' => $dept_head_user->field_on_leave['und']['0']['value'],
         'email_id' => explode("@", $dept_head_user->mail)[0],
         'head' => TRUE,
       );
@@ -139,6 +145,60 @@ function _department_list_json() {
   }
 
   print json_encode($departments);
+
+  return;
+}
+
+/**
+ * Creates listing of library liasons
+ */
+function _library_liasons_list_json() {
+
+  $campuses = array('UNBF' => 'FR', 'UNBSJ' => 'SJ', 'STU' => 'STU');
+  $liason_list = array();
+
+  foreach ($campuses as $campus => $campus_id) {
+
+    $faculties_query = new EntityFieldQuery();
+    $faculties_query->entityCondition('entity_type', 'taxonomy_term')
+    ->entityCondition('bundle', 'faculties')
+    ->fieldCondition('field_campus', 'value', $campus, '=')
+    ->propertyOrderBy('name', 'ASC');
+    $faculties_result = $faculties_query->execute();
+
+    $faculties = array();
+    foreach ($faculties_result['taxonomy_term'] as $faculty) {
+      $faculty_term = taxonomy_term_load($faculty->tid);
+      $faculty_info = array(
+        'name' => $faculty_term->name,
+        'department_rep_name' => $faculty_term->field_department_rep_name['und'][0]['safe_value'],
+        'department_rep_phone' => $faculty_term->field_department_rep_phone['und'][0]['safe_value'],
+        'department_rep_email' => $faculty_term->field_department_rep_email['und'][0]['safe_value'],
+        'library_liason' => array(),
+      );
+
+      $liason_query = new EntityFieldQuery();
+      $liason_query->entityCondition('entity_type', 'user')
+      ->fieldCondition('field_library_liason', 'tid', $faculty->tid, '=');
+      $liason_result = $liason_query->execute();
+
+      $liason_user = user_load(array_keys($liason_result['user'])[0]);
+      $liason_info = array(
+        'first_name' => $liason_user->field_first_name['und']['0']['safe_value'],
+        'last_name' => $liason_user->field_last_name['und']['0']['safe_value'],
+        'phone' => $liason_user->field_phone_number['und']['0']['safe_value'],
+        'email_id' => explode("@", $liason_user->mail)[0],
+      );
+
+      $faculty_info['library_liason'] = $liason_info;
+
+      $faculties[] = $faculty_info;
+    }
+
+    $liason_list[$campus_id] = $faculties;
+  }
+
+  print json_encode($liason_list);
 
   return;
 }
