@@ -183,7 +183,7 @@ function _library_liaisons_list_json() {
 
       $liaison_query = new EntityFieldQuery();
       $liaison_query->entityCondition('entity_type', 'user')
-      ->fieldCondition('field_library_liaison', 'tid', $faculty->tid, '=');
+      ->fieldCondition('field_library_liason', 'tid', $faculty->tid, '=');
       $liaison_result = $liaison_query->execute();
 
       $liaison_user = user_load(array_keys($liaison_result['user'])[0]);
