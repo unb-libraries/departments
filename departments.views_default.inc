@@ -15,14 +15,14 @@ function departments_views_default_views() {
   $view->description = '';
   $view->tag = 'default';
   $view->base_table = 'taxonomy_term_data';
-  $view->human_name = 'Edit Library Liason Departments';
+  $view->human_name = 'Edit Library Liaison Departments';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Edit Library Liason Departments';
+  $handler->display->display_options['title'] = 'Edit Library Liaison Departments';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['access']['perm'] = 'edit terms in 6';
@@ -74,7 +74,7 @@ function departments_views_default_views() {
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
-  $handler->display->display_options['path'] = 'edit-library-liason-departments';
+  $handler->display->display_options['path'] = 'edit-library-liaison-departments';
   $handler->display->display_options['menu']['type'] = 'normal';
   $handler->display->display_options['menu']['title'] = 'Edit Library Liason Departments';
   $handler->display->display_options['menu']['weight'] = '0';

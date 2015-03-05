@@ -571,7 +571,7 @@ function departments_field_default_field_instances() {
     ),
     'entity_type' => 'user',
     'field_name' => 'field_library_liason',
-    'label' => 'Library Liason',
+    'label' => 'Library Liaison',
     'required' => 0,
     'settings' => array(
       'user_register_form' => 1,
@@ -707,7 +707,7 @@ function departments_field_default_field_instances() {
   t('Last Name');
   t('Library Department (Department Head)');
   t('Library Department (Regular Member)');
-  t('Library Liason');
+  t('Library Liaison');
   t('Location');
   t('On Leave');
   t('Phone');

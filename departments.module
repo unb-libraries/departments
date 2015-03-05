@@ -24,9 +24,9 @@ function departments_menu() {
     'access arguments' => array('view departments'),
     'type' => MENU_CALLBACK,
   );
-  $items['liasons.xml'] = array(
-    'title' => 'Library Liasons',
-    'page callback' => '_library_liasons_list_json',
+  $items['liaisons.xml'] = array(
+    'title' => 'Library Liaisons',
+    'page callback' => '_library_liaisons_list_json',
     'access arguments' => array('view departments'),
     'type' => MENU_CALLBACK,
   );
@@ -152,12 +152,12 @@ function _department_list_json() {
 }
 
 /**
- * Creates listing of library liasons
+ * Creates listing of library liaisons
  */
-function _library_liasons_list_json() {
+function _library_liaisons_list_json() {
 
   $campuses = array('UNBF' => 'FR', 'UNBSJ' => 'SJ', 'STU' => 'STU');
-  $liason_list = array();
+  $liaison_list = array();
 
   foreach ($campuses as $campus => $campus_id) {
 
@@ -178,31 +178,31 @@ function _library_liasons_list_json() {
           'phone' => $faculty_term->field_department_rep_phone['und'][0]['safe_value'],
           'email' => $faculty_term->field_department_rep_email['und'][0]['safe_value'],
         ),
-        'library_liason' => array(),
+        'library_liaison' => array(),
       );
 
-      $liason_query = new EntityFieldQuery();
-      $liason_query->entityCondition('entity_type', 'user')
-      ->fieldCondition('field_library_liason', 'tid', $faculty->tid, '=');
-      $liason_result = $liason_query->execute();
+      $liaison_query = new EntityFieldQuery();
+      $liaison_query->entityCondition('entity_type', 'user')
+      ->fieldCondition('field_library_liaison', 'tid', $faculty->tid, '=');
+      $liaison_result = $liaison_query->execute();
 
-      $liason_user = user_load(array_keys($liason_result['user'])[0]);
-      $liason_info = array(
-        'first_name' => $liason_user->field_first_name['und']['0']['safe_value'],
-        'last_name' => $liason_user->field_last_name['und']['0']['safe_value'],
-        'phone' => $liason_user->field_phone_number['und']['0']['safe_value'],
-        'email_id' => explode("@", $liason_user->mail)[0],
+      $liaison_user = user_load(array_keys($liaison_result['user'])[0]);
+      $liaison_info = array(
+        'first_name' => $liaison_user->field_first_name['und']['0']['safe_value'],
+        'last_name' => $liaison_user->field_last_name['und']['0']['safe_value'],
+        'phone' => $liaison_user->field_phone_number['und']['0']['safe_value'],
+        'email_id' => explode("@", $liaison_user->mail)[0],
       );
 
-      $faculty_info['library_liason'] = $liason_info;
+      $faculty_info['library_liaison'] = $liaison_info;
 
       $faculties[] = $faculty_info;
     }
 
-    $liason_list[$campus_id] = $faculties;
+    $liaison_list[$campus_id] = $faculties;
   }
 
-  print json_encode($liason_list);
+  print json_encode($liaison_list);
 
   return;
 }
