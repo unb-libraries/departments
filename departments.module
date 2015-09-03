@@ -77,7 +77,7 @@ function _department_list_json() {
 
   $departments = array();
   foreach ($departments_result['taxonomy_term'] as $department) {
-    $department_term = entity_metadata_wrapper(taxonomy_term, taxonomy_term_load($department->tid));
+    $department_term = entity_metadata_wrapper('taxonomy_term', taxonomy_term_load($department->tid));
     $department_info = array(
       'name' => $department_term->name->value(array('sanitize' => TRUE)),
       'location' => $department_term->field_department_location->value(array('sanitize' => TRUE)),
@@ -144,7 +144,7 @@ function _library_liaisons_list_json() {
 
     $faculties = array();
     foreach ($faculties_result['taxonomy_term'] as $faculty) {
-      $faculty_term = entity_metadata_wrapper(taxonomy_term, taxonomy_term_load($faculty->tid));
+      $faculty_term = entity_metadata_wrapper('taxonomy_term', taxonomy_term_load($faculty->tid));
       $faculty_info = array(
         'name' => $faculty_term->field_display_name->value(array('sanitize' => TRUE)),
         'department_rep' => array(
