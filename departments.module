@@ -57,17 +57,7 @@ function _staff_list_alpha_json() {
 
   $staff_list = array();
   foreach ($staff_result['user'] as $uid => $staff) {
-    $staff_user = user_load($uid);
-    $staff_info = array(
-      'first_name' => $staff_user->field_first_name['und']['0']['safe_value'],
-      'last_name' => $staff_user->field_last_name['und']['0']['safe_value'],
-      'position' => $staff_user->field_position_title['und']['0']['safe_value'],
-      'phone' => $staff_user->field_phone_number['und']['0']['safe_value'],
-      'on_leave' => $staff_user->field_on_leave['und']['0']['value'],
-      'email_id' => explode("@", $staff_user->mail)[0],
-      'head' => FALSE,
-    );
-    $staff_list[] = $staff_info;
+    $staff_list[] = _get_user_info_from_uid($uid);
   }
 
   print json_encode($staff_list);
@@ -87,15 +77,15 @@ function _department_list_json() {
 
   $departments = array();
   foreach ($departments_result['taxonomy_term'] as $department) {
-    $department_term = taxonomy_term_load($department->tid);
+    $department_term = entity_metadata_wrapper(taxonomy_term, taxonomy_term_load($department->tid));
     $department_info = array(
-      'name' => $department_term->name,
-      'location' => array_key_exists('und', $department_term->field_department_location) ? $department_term->field_department_location['und'][0]['safe_value'] : '',
-      'phone' => array_key_exists('und', $department_term->field_department_phone) ? $department_term->field_department_phone['und'][0]['safe_value'] : '',
-      'fax' => array_key_exists('und', $department_term->field_department_fax) ? $department_term->field_department_fax['und'][0]['safe_value'] : '',
-      'email' => array_key_exists('und', $department_term->field_department_email) ? $department_term->field_department_email['und'][0]['safe_value'] : '',
-      'website' => array_key_exists('und', $department_term->field_department_website) ? $department_term->field_department_website['und'][0]['safe_value'] : '',
-      'html_id' => array_key_exists('und', $department_term->field_short_name) ? $department_term->field_short_name['und'][0]['safe_value'] : '',
+      'name' => $department_term->name->value(array('sanitize' => TRUE)),
+      'location' => $department_term->field_department_location->value(array('sanitize' => TRUE)),
+      'phone' => $department_term->field_department_phone->value(array('sanitize' => TRUE)),
+      'fax' => $department_term->field_department_fax->value(array('sanitize' => TRUE)),
+      'email' => $department_term->field_department_email->value(array('sanitize' => TRUE)),
+      'website' => $department_term->field_department_website->value(array('sanitize' => TRUE)),
+      'html_id' => $department_term->field_short_name->value(array('sanitize' => TRUE)),
       'members' => array(),
     );
 
@@ -109,17 +99,7 @@ function _department_list_json() {
 
     if (array_key_exists('user', $dept_head_result)) {
       foreach ($dept_head_result['user'] as $uid => $dept_head) {
-        $dept_head_user = user_load($uid);
-        $dept_head_info = array(
-          'first_name' => $dept_head_user->field_first_name['und']['0']['safe_value'],
-          'last_name' => $dept_head_user->field_last_name['und']['0']['safe_value'],
-          'position' => $dept_head_user->field_position_title['und']['0']['safe_value'],
-          'phone' => $dept_head_user->field_phone_number['und']['0']['safe_value'],
-          'on_leave' => $dept_head_user->field_on_leave['und']['0']['value'],
-          'email_id' => explode("@", $dept_head_user->mail)[0],
-          'head' => TRUE,
-        );
-        $department_info['members'][] = $dept_head_info;
+        $department_info['members'][] = _get_user_info_from_uid($uid, array('head' => TRUE));
       }
     }
 
@@ -133,17 +113,7 @@ function _department_list_json() {
 
     if (array_key_exists('user', $member_result)) {
       foreach ($member_result['user'] as $uid => $member) {
-        $member_user = user_load($uid);
-        $member_info = array(
-          'first_name' => $member_user->field_first_name['und']['0']['safe_value'],
-          'last_name' => $member_user->field_last_name['und']['0']['safe_value'],
-          'position' => $member_user->field_position_title['und']['0']['safe_value'],
-          'phone' => $member_user->field_phone_number['und']['0']['safe_value'],
-          'on_leave' => $member_user->field_on_leave['und']['0']['value'],
-          'email_id' => explode("@", $member_user->mail)[0],
-          'head' => FALSE,
-        );
-        $department_info['members'][] = $member_info;
+        $department_info['members'][] = _get_user_info_from_uid($uid);
       }
     }
 
@@ -174,13 +144,13 @@ function _library_liaisons_list_json() {
 
     $faculties = array();
     foreach ($faculties_result['taxonomy_term'] as $faculty) {
-      $faculty_term = taxonomy_term_load($faculty->tid);
+      $faculty_term = entity_metadata_wrapper(taxonomy_term, taxonomy_term_load($faculty->tid));
       $faculty_info = array(
-        'name' => $faculty_term->field_display_name['und'][0]['safe_value'],
+        'name' => $faculty_term->field_display_name->value(array('sanitize' => TRUE)),
         'department_rep' => array(
-          'name' => $faculty_term->field_department_rep_name['und'][0]['safe_value'],
-          'phone' => $faculty_term->field_department_rep_phone['und'][0]['safe_value'],
-          'email' => $faculty_term->field_department_rep_email['und'][0]['safe_value'],
+          'name' => $faculty_term->field_department_rep_name->value(array('sanitize' => TRUE)),
+          'phone' => $faculty_term->field_department_rep_phone->value(array('sanitize' => TRUE)),
+          'email' => $faculty_term->field_department_rep_email->value(array('sanitize' => TRUE)),
         ),
         'library_liaison' => array(),
       );
@@ -190,16 +160,7 @@ function _library_liaisons_list_json() {
       ->fieldCondition('field_library_liason', 'tid', $faculty->tid, '=');
       $liaison_result = $liaison_query->execute();
 
-      $liaison_user = user_load(array_keys($liaison_result['user'])[0]);
-      $liaison_info = array(
-        'first_name' => $liaison_user->field_first_name['und']['0']['safe_value'],
-        'last_name' => $liaison_user->field_last_name['und']['0']['safe_value'],
-        'phone' => $liaison_user->field_phone_number['und']['0']['safe_value'],
-        'email_id' => explode("@", $liaison_user->mail)[0],
-      );
-
-      $faculty_info['library_liaison'] = $liaison_info;
-
+      $faculty_info['library_liaison'] = _get_user_info_from_uid(array_keys($liaison_result['user'])[0]);
       $faculties[] = $faculty_info;
     }
 
@@ -209,4 +170,23 @@ function _library_liaisons_list_json() {
   print json_encode($liaison_list);
 
   return;
+}
+
+function _get_user_info_from_uid($uid, $options=array()) {
+  if(is_null($uid)) {
+    return new ArrayObject();
+  }
+
+  $user = entity_metadata_wrapper('user', user_load($uid));
+  $info = array_merge(array(
+    'first_name' => $user->field_first_name->value(array('sanitize' => TRUE)),
+    'last_name' => $user->field_last_name->value(array('sanitize' => TRUE)),
+    'position' => $user->field_position_title->value(array('sanitize' => TRUE)),
+    'phone' => $user->field_phone_number->value(array('sanitize' => TRUE)),
+    'on_leave' => $user->field_on_leave->value(),
+    'email_id' => explode("@", $user->mail->value)[0],
+    'head' => FALSE,
+  ), $options);
+
+  return $info;
 }
