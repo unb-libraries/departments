@@ -184,7 +184,7 @@ function _get_user_info_from_uid($uid, $options=array()) {
     'position' => $user->field_position_title->value(array('sanitize' => TRUE)),
     'phone' => $user->field_phone_number->value(array('sanitize' => TRUE)),
     'on_leave' => $user->field_on_leave->value(),
-    'email_id' => explode("@", $user->mail->value)[0],
+    'email_id' => explode("@", $user->mail->value())[0],
     'head' => FALSE,
   ), $options);
 
