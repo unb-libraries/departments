@@ -13,13 +13,13 @@ function departments_user_default_roles() {
   // Exported role: Liason Listing Admin.
   $roles['Liason Listing Admin'] = array(
     'name' => 'Liason Listing Admin',
-    'weight' => 43,
+    'weight' => 12,
   );
 
   // Exported role: Staff Directory Admin.
   $roles['Staff Directory Admin'] = array(
     'name' => 'Staff Directory Admin',
-    'weight' => 42,
+    'weight' => 37,
   );
 
   return $roles;

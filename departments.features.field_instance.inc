@@ -41,7 +41,8 @@ function departments_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'taxonomy_term-faculties-field_department_rep_email'
+  // Exported field_instance:
+  // 'taxonomy_term-faculties-field_department_rep_email'
   $field_instances['taxonomy_term-faculties-field_department_rep_email'] = array(
     'bundle' => 'faculties',
     'default_value' => NULL,
@@ -75,7 +76,8 @@ function departments_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'taxonomy_term-faculties-field_department_rep_name'
+  // Exported field_instance:
+  // 'taxonomy_term-faculties-field_department_rep_name'
   $field_instances['taxonomy_term-faculties-field_department_rep_name'] = array(
     'bundle' => 'faculties',
     'default_value' => NULL,
@@ -109,7 +111,8 @@ function departments_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'taxonomy_term-faculties-field_department_rep_phone'
+  // Exported field_instance:
+  // 'taxonomy_term-faculties-field_department_rep_phone'
   $field_instances['taxonomy_term-faculties-field_department_rep_phone'] = array(
     'bundle' => 'faculties',
     'default_value' => NULL,
@@ -177,7 +180,8 @@ function departments_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'taxonomy_term-library_departments-field_department_email'
+  // Exported field_instance:
+  // 'taxonomy_term-library_departments-field_department_email'
   $field_instances['taxonomy_term-library_departments-field_department_email'] = array(
     'bundle' => 'library_departments',
     'default_value' => NULL,
@@ -211,7 +215,8 @@ function departments_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'taxonomy_term-library_departments-field_department_fax'
+  // Exported field_instance:
+  // 'taxonomy_term-library_departments-field_department_fax'
   $field_instances['taxonomy_term-library_departments-field_department_fax'] = array(
     'bundle' => 'library_departments',
     'default_value' => NULL,
@@ -245,7 +250,8 @@ function departments_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'taxonomy_term-library_departments-field_department_location'
+  // Exported field_instance:
+  // 'taxonomy_term-library_departments-field_department_location'
   $field_instances['taxonomy_term-library_departments-field_department_location'] = array(
     'bundle' => 'library_departments',
     'default_value' => NULL,
@@ -279,7 +285,8 @@ function departments_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'taxonomy_term-library_departments-field_department_phone'
+  // Exported field_instance:
+  // 'taxonomy_term-library_departments-field_department_phone'
   $field_instances['taxonomy_term-library_departments-field_department_phone'] = array(
     'bundle' => 'library_departments',
     'default_value' => NULL,
@@ -313,7 +320,8 @@ function departments_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'taxonomy_term-library_departments-field_department_website'
+  // Exported field_instance:
+  // 'taxonomy_term-library_departments-field_department_website'
   $field_instances['taxonomy_term-library_departments-field_department_website'] = array(
     'bundle' => 'library_departments',
     'default_value' => NULL,
@@ -347,7 +355,8 @@ function departments_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'taxonomy_term-library_departments-field_short_name'
+  // Exported field_instance:
+  // 'taxonomy_term-library_departments-field_short_name'
   $field_instances['taxonomy_term-library_departments-field_short_name'] = array(
     'bundle' => 'library_departments',
     'default_value' => NULL,
@@ -510,12 +519,12 @@ function departments_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 0,
-      'module' => 'taxonomy',
+      'module' => 'options',
       'settings' => array(
         'autocomplete_path' => 'taxonomy/autocomplete',
         'size' => 60,
       ),
-      'type' => 'taxonomy_autocomplete',
+      'type' => 'options_buttons',
       'weight' => 7,
     ),
   );
@@ -544,12 +553,12 @@ function departments_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 0,
-      'module' => 'taxonomy',
+      'module' => 'options',
       'settings' => array(
         'autocomplete_path' => 'taxonomy/autocomplete',
         'size' => 60,
       ),
-      'type' => 'taxonomy_autocomplete',
+      'type' => 'options_buttons',
       'weight' => 8,
     ),
   );
@@ -578,12 +587,12 @@ function departments_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 0,
-      'module' => 'taxonomy',
+      'module' => 'options',
       'settings' => array(
         'autocomplete_path' => 'taxonomy/autocomplete',
         'size' => 60,
       ),
-      'type' => 'taxonomy_autocomplete',
+      'type' => 'options_buttons',
       'weight' => 10,
     ),
   );
