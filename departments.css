@@ -1,0 +1,9 @@
+.page-user-edit #edit-field-library-department .form-checkboxes,
+.page-user-edit #edit-field-library-department-head .form-checkboxes,
+.page-user-edit #edit-field-library-liason .form-checkboxes {
+  max-height: 165px;
+  overflow: scroll;
+  border: 1px solid #ccc;
+  padding: 0 10px;
+  display: inline-block;
+}
