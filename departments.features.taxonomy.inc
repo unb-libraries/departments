@@ -12,7 +12,7 @@ function departments_taxonomy_default_vocabularies() {
     'faculties' => array(
       'name' => 'Faculties',
       'machine_name' => 'faculties',
-      'description' => 'Faculties for Library Liason listings',
+      'description' => 'Faculties for Library Liaison listings',
       'hierarchy' => 0,
       'module' => 'taxonomy',
       'weight' => 0,

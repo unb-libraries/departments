@@ -10,9 +10,9 @@
 function departments_user_default_roles() {
   $roles = array();
 
-  // Exported role: Liason Listing Admin.
-  $roles['Liason Listing Admin'] = array(
-    'name' => 'Liason Listing Admin',
+  // Exported role: Liaison Listing Admin.
+  $roles['Liaison Listing Admin'] = array(
+    'name' => 'Liaison Listing Admin',
     'weight' => 12,
   );
 
