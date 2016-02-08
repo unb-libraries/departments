@@ -10,7 +10,7 @@
 function departments_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'taxonomy_term-faculties-field_campus'
+  // Exported field_instance: 'taxonomy_term-faculties-field_campus'.
   $field_instances['taxonomy_term-faculties-field_campus'] = array(
     'bundle' => 'faculties',
     'default_value' => NULL,
@@ -42,7 +42,7 @@ function departments_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'taxonomy_term-faculties-field_department_rep_email'
+  // 'taxonomy_term-faculties-field_department_rep_email'.
   $field_instances['taxonomy_term-faculties-field_department_rep_email'] = array(
     'bundle' => 'faculties',
     'default_value' => NULL,
@@ -77,7 +77,7 @@ function departments_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'taxonomy_term-faculties-field_department_rep_name'
+  // 'taxonomy_term-faculties-field_department_rep_name'.
   $field_instances['taxonomy_term-faculties-field_department_rep_name'] = array(
     'bundle' => 'faculties',
     'default_value' => NULL,
@@ -112,7 +112,7 @@ function departments_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'taxonomy_term-faculties-field_department_rep_phone'
+  // 'taxonomy_term-faculties-field_department_rep_phone'.
   $field_instances['taxonomy_term-faculties-field_department_rep_phone'] = array(
     'bundle' => 'faculties',
     'default_value' => NULL,
@@ -146,7 +146,7 @@ function departments_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'taxonomy_term-faculties-field_display_name'
+  // Exported field_instance: 'taxonomy_term-faculties-field_display_name'.
   $field_instances['taxonomy_term-faculties-field_display_name'] = array(
     'bundle' => 'faculties',
     'default_value' => NULL,
@@ -181,7 +181,7 @@ function departments_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'taxonomy_term-library_departments-field_department_email'
+  // 'taxonomy_term-library_departments-field_department_email'.
   $field_instances['taxonomy_term-library_departments-field_department_email'] = array(
     'bundle' => 'library_departments',
     'default_value' => NULL,
@@ -216,7 +216,7 @@ function departments_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'taxonomy_term-library_departments-field_department_fax'
+  // 'taxonomy_term-library_departments-field_department_fax'.
   $field_instances['taxonomy_term-library_departments-field_department_fax'] = array(
     'bundle' => 'library_departments',
     'default_value' => NULL,
@@ -251,7 +251,7 @@ function departments_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'taxonomy_term-library_departments-field_department_location'
+  // 'taxonomy_term-library_departments-field_department_location'.
   $field_instances['taxonomy_term-library_departments-field_department_location'] = array(
     'bundle' => 'library_departments',
     'default_value' => NULL,
@@ -286,7 +286,7 @@ function departments_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'taxonomy_term-library_departments-field_department_phone'
+  // 'taxonomy_term-library_departments-field_department_phone'.
   $field_instances['taxonomy_term-library_departments-field_department_phone'] = array(
     'bundle' => 'library_departments',
     'default_value' => NULL,
@@ -321,7 +321,7 @@ function departments_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'taxonomy_term-library_departments-field_department_website'
+  // 'taxonomy_term-library_departments-field_department_website'.
   $field_instances['taxonomy_term-library_departments-field_department_website'] = array(
     'bundle' => 'library_departments',
     'default_value' => NULL,
@@ -356,7 +356,7 @@ function departments_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'taxonomy_term-library_departments-field_short_name'
+  // 'taxonomy_term-library_departments-field_short_name'.
   $field_instances['taxonomy_term-library_departments-field_short_name'] = array(
     'bundle' => 'library_departments',
     'default_value' => NULL,
@@ -390,7 +390,7 @@ function departments_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'user-user-field_display_on_staff_directory'
+  // Exported field_instance: 'user-user-field_display_on_staff_directory'.
   $field_instances['user-user-field_display_on_staff_directory'] = array(
     'bundle' => 'user',
     'default_value' => array(
@@ -427,7 +427,7 @@ function departments_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'user-user-field_first_name'
+  // Exported field_instance: 'user-user-field_first_name'.
   $field_instances['user-user-field_first_name'] = array(
     'bundle' => 'user',
     'default_value' => NULL,
@@ -461,7 +461,7 @@ function departments_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'user-user-field_last_name'
+  // Exported field_instance: 'user-user-field_last_name'.
   $field_instances['user-user-field_last_name'] = array(
     'bundle' => 'user',
     'default_value' => NULL,
@@ -495,7 +495,7 @@ function departments_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'user-user-field_library_department'
+  // Exported field_instance: 'user-user-field_library_department'.
   $field_instances['user-user-field_library_department'] = array(
     'bundle' => 'user',
     'default_value' => NULL,
@@ -529,7 +529,7 @@ function departments_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'user-user-field_library_department_head'
+  // Exported field_instance: 'user-user-field_library_department_head'.
   $field_instances['user-user-field_library_department_head'] = array(
     'bundle' => 'user',
     'default_value' => NULL,
@@ -563,7 +563,7 @@ function departments_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'user-user-field_library_liason'
+  // Exported field_instance: 'user-user-field_library_liason'.
   $field_instances['user-user-field_library_liason'] = array(
     'bundle' => 'user',
     'default_value' => NULL,
@@ -597,7 +597,7 @@ function departments_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'user-user-field_on_leave'
+  // Exported field_instance: 'user-user-field_on_leave'.
   $field_instances['user-user-field_on_leave'] = array(
     'bundle' => 'user',
     'default_value' => array(
@@ -634,7 +634,7 @@ function departments_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'user-user-field_phone_number'
+  // Exported field_instance: 'user-user-field_phone_number'.
   $field_instances['user-user-field_phone_number'] = array(
     'bundle' => 'user',
     'default_value' => NULL,
@@ -668,7 +668,7 @@ function departments_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'user-user-field_position_title'
+  // Exported field_instance: 'user-user-field_position_title'.
   $field_instances['user-user-field_position_title'] = array(
     'bundle' => 'user',
     'default_value' => NULL,

@@ -10,7 +10,7 @@
 function departments_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_campus'
+  // Exported field_base: 'field_campus'.
   $field_bases['field_campus'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -36,7 +36,7 @@ function departments_field_default_field_bases() {
     'type' => 'list_text',
   );
 
-  // Exported field_base: 'field_department_email'
+  // Exported field_base: 'field_department_email'.
   $field_bases['field_department_email'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -57,7 +57,7 @@ function departments_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_department_fax'
+  // Exported field_base: 'field_department_fax'.
   $field_bases['field_department_fax'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -78,7 +78,7 @@ function departments_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_department_location'
+  // Exported field_base: 'field_department_location'.
   $field_bases['field_department_location'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -99,7 +99,7 @@ function departments_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_department_phone'
+  // Exported field_base: 'field_department_phone'.
   $field_bases['field_department_phone'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -120,7 +120,7 @@ function departments_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_department_rep_email'
+  // Exported field_base: 'field_department_rep_email'.
   $field_bases['field_department_rep_email'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -141,7 +141,7 @@ function departments_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_department_rep_name'
+  // Exported field_base: 'field_department_rep_name'.
   $field_bases['field_department_rep_name'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -162,7 +162,7 @@ function departments_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_department_rep_phone'
+  // Exported field_base: 'field_department_rep_phone'.
   $field_bases['field_department_rep_phone'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -183,7 +183,7 @@ function departments_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_department_website'
+  // Exported field_base: 'field_department_website'.
   $field_bases['field_department_website'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -204,7 +204,7 @@ function departments_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_display_name'
+  // Exported field_base: 'field_display_name'.
   $field_bases['field_display_name'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -225,7 +225,7 @@ function departments_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_display_on_staff_directory'
+  // Exported field_base: 'field_display_on_staff_directory'.
   $field_bases['field_display_on_staff_directory'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -250,7 +250,7 @@ function departments_field_default_field_bases() {
     'type' => 'list_boolean',
   );
 
-  // Exported field_base: 'field_first_name'
+  // Exported field_base: 'field_first_name'.
   $field_bases['field_first_name'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -271,7 +271,7 @@ function departments_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_last_name'
+  // Exported field_base: 'field_last_name'.
   $field_bases['field_last_name'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -292,7 +292,7 @@ function departments_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_library_department'
+  // Exported field_base: 'field_library_department'.
   $field_bases['field_library_department'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -318,7 +318,7 @@ function departments_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_library_department_head'
+  // Exported field_base: 'field_library_department_head'.
   $field_bases['field_library_department_head'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -344,7 +344,7 @@ function departments_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_library_liason'
+  // Exported field_base: 'field_library_liason'.
   $field_bases['field_library_liason'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -370,7 +370,7 @@ function departments_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_on_leave'
+  // Exported field_base: 'field_on_leave'.
   $field_bases['field_on_leave'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -395,7 +395,7 @@ function departments_field_default_field_bases() {
     'type' => 'list_boolean',
   );
 
-  // Exported field_base: 'field_phone_number'
+  // Exported field_base: 'field_phone_number'.
   $field_bases['field_phone_number'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -416,7 +416,7 @@ function departments_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_position_title'
+  // Exported field_base: 'field_position_title'.
   $field_bases['field_position_title'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -437,7 +437,7 @@ function departments_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_short_name'
+  // Exported field_base: 'field_short_name'.
   $field_bases['field_short_name'] = array(
     'active' => 1,
     'cardinality' => 1,

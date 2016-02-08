@@ -19,7 +19,7 @@ function departments_user_default_roles() {
   // Exported role: Staff Directory Admin.
   $roles['Staff Directory Admin'] = array(
     'name' => 'Staff Directory Admin',
-    'weight' => 37,
+    'weight' => 41,
   );
 
   return $roles;
