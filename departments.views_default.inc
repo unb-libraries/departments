@@ -76,7 +76,7 @@ function departments_views_default_views() {
   $handler = $view->new_display('page', 'Page', 'page');
   $handler->display->display_options['path'] = 'edit-library-liaison-departments';
   $handler->display->display_options['menu']['type'] = 'normal';
-  $handler->display->display_options['menu']['title'] = 'Edit Library Liaison Departments';
+  $handler->display->display_options['menu']['title'] = 'Edit Library Liason Departments';
   $handler->display->display_options['menu']['weight'] = '0';
   $handler->display->display_options['menu']['context'] = 0;
   $handler->display->display_options['menu']['context_only_inline'] = 0;
