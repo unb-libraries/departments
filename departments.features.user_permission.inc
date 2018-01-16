@@ -15,6 +15,7 @@ function departments_user_default_permissions() {
     'name' => 'edit terms in faculties',
     'roles' => array(
       'Liaison Listing Admin' => 'Liaison Listing Admin',
+      'administrator' => 'administrator',
     ),
     'module' => 'taxonomy',
   );
@@ -23,6 +24,7 @@ function departments_user_default_permissions() {
   $permissions['view departments'] = array(
     'name' => 'view departments',
     'roles' => array(
+      'administrator' => 'administrator',
       'anonymous user' => 'anonymous user',
     ),
     'module' => 'departments',
