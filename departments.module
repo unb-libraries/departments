@@ -183,6 +183,7 @@ function _get_user_info_from_uid($uid, $options=array()) {
     'last_name' => $user->field_last_name->value(array('sanitize' => TRUE)),
     'position' => $user->field_position_title->value(array('sanitize' => TRUE)),
     'phone' => $user->field_phone_number->value(array('sanitize' => TRUE)),
+    'room' => $user->field_room_number->value(array('sanitize' => TRUE)),
     'on_leave' => $user->field_on_leave->value(),
     'email_id' => explode("@", $user->mail->value())[0],
     'head' => FALSE,
